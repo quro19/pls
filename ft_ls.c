@@ -6,7 +6,7 @@
 /*   By: qbackaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:44:08 by qbackaer          #+#    #+#             */
-/*   Updated: 2019/06/14 18:04:52 by qbackaer         ###   ########.fr       */
+/*   Updated: 2019/08/29 18:28:01 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ static int	ls_dispatch(char **arg_list, char *opt_list)
 		// list home directory (".")
 		return (1);
 	}
+	sort_args(&arg_list, opt_list);
 	roam = arg_list;
+	ft_putendl("we just get out of sort_args");
 	while (*roam)
 	{
 		stat(*roam, &st_buff);
+		ft_putendl("stat done");
 		if (S_ISDIR(st_buff.st_mode))
 		{
 			dir_list = update_args(dir_list, *roam);
@@ -42,6 +45,7 @@ static int	ls_dispatch(char **arg_list, char *opt_list)
 		}	
 		roam++;
 	}
+	ft_putendl("we get out of dispatch");
 	//list all files from reg_list first, respecting options.
 	//loop on reg_list and list their content.
 	return (1);

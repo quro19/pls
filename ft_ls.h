@@ -6,7 +6,7 @@
 /*   By: qbackaer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:42:36 by qbackaer          #+#    #+#             */
-/*   Updated: 2019/06/14 15:47:24 by qbackaer         ###   ########.fr       */
+/*   Updated: 2019/08/29 18:18:49 by srobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@
 # include <time.h>
 # include "libft/libft.h"
 
+
 /* parse.c */
 int		parse(int argc, char **argv, char **opt_list, char ***arg_list);
 char	**update_args(char **arg_list, char *n_arg);
+
+/* sort_args.c */
+int		sort_args(char ***arg_list, char *opt_list);
 
 /* util.c */
 int		check_opt(char *opt_list, char **arg_list);
